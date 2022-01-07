@@ -1,19 +1,15 @@
-function Workers () {
-    if (!new.target) {
-        return new Workers();
+class Workers {
+    constructor(fullName,age,position,salary,comment){
+    this.fullName = fullName || '';
+    this.age = age || 0;
+    this.position = position || '';
+    this.salary = salary || 0;
+    this.comment = comment || '';
     }
-    this.fullName = '';
-    this.age = 0;
-    this.position = '';
-    this.salary = 0;
-    this.comment = '';
 }
 
-let storeAdmin = Workers();
-storeAdmin.fullName = 'Зенаида Петровна Хуст';
-storeAdmin.age = 62;
-storeAdmin.position = 'Администратор';
-storeAdmin.salary = 15000;
-storeAdmin.comment = 'Бившый десантник, принимала участие в военом перевороте в Уганде, Сомали.';
+const WORKER_ADMIN = new Workers('Зенаида Петровна Хуст',62,'Администратор',15000,'Бившый десантник, принимала участие в военом перевороте в Уганде, Сомали.')
+const WORKER_SALESMAN = new Workers()
 
-console.log(storeAdmin);
+console.log(WORKER_ADMIN);
+console.log(WORKER_SALESMAN);
